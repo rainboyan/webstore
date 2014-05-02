@@ -1,0 +1,107 @@
+buildscript {
+	repositories {
+		jcenter()
+	}
+
+	dependencies {
+		classpath "org.grails:grails-gradle-plugin:2.0.1"
+	}
+}
+
+group = "webstore"
+version = "0.1"
+
+configure(subprojects - project(':core')) { subproject ->
+
+
+	apply plugin: 'grails'
+
+	grails {
+		grailsVersion = '2.3.6'
+		groovyVersion = '2.1.9'
+		springLoadedVersion = '1.1.3'
+	}
+
+	repositories {
+		mavenLocal()
+		mavenCentral()
+		grails.central()
+	}
+
+	dependencies {
+		compile('javax.servlet:javax.servlet-api:3.0.1')
+		test("junit:junit:4.11")
+		test("org.spockframework:spock-grails-support:0.7-groovy-2.0")
+	}
+}
+
+project("account") {
+	description = "Account"
+
+	dependencies {
+		compile(project(":core"))
+	}
+}
+
+project("logistic") {
+	description = "Logistic"
+
+	dependencies {
+		compile(project(":core"))
+	}
+}
+
+project("order") {
+	description = "Order"
+
+	dependencies {
+		compile(project(":core"))
+	}
+}
+
+project("product") {
+	description = "Product"
+
+	dependencies {
+		compile(project(":core"))
+	}
+}
+
+project("warehouse") {
+	description = "Warehouse"
+
+	dependencies {
+		compile(project(":core"))
+	}
+}
+
+project("webstore") {
+	description = "Webstore"
+
+	dependencies {
+		compile(project(":account"))
+		compile(project(":core"))
+		compile(project(":logistic"))
+		compile(project(":order"))
+		compile(project(":product"))
+		compile(project(":warehouse"))
+		bootstrap "org.grails.plugins:tomcat:7.0.50"
+		compile 'org.grails.plugins:resources:1.2'
+	}
+}
+
+project("core") {
+	description = "Core"
+
+	apply plugin: 'maven'
+	apply plugin: 'groovy'
+
+	repositories {
+		mavenLocal()
+		mavenCentral()
+	}
+
+	dependencies {
+	    compile 'org.codehaus.groovy:groovy-all:2.1.9'
+	}
+}

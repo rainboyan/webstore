@@ -1,0 +1,10 @@
+package webstore.account
+
+import grails.converters.JSON
+
+class AccountController {
+
+    def index() { 
+        return Account.list() as JSON
+    }
+}

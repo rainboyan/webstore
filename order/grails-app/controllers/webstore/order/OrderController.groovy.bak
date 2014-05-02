@@ -1,0 +1,6 @@
+package webstore.order
+
+class OrderController {
+
+    def index() { }
+}
