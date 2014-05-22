@@ -1,0 +1,19 @@
+# .gitignore for Grails 2.0
+
+# web application files
+/web-app/WEB-INF/classes
+
+# logs
+/stacktrace.log
+/test/reports
+/logs
+
+# project release file
+/*.war
+
+# plugin release files
+/*.zip
+/plugin.xml
+
+# "temporary" build files
+/target
