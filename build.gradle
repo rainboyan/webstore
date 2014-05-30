@@ -87,7 +87,7 @@ project("webstore") {
 		compile(project(":product"))
 		compile(project(":warehouse"))
 		bootstrap "org.grails.plugins:tomcat:7.0.53"
-		compile 'org.grails.plugins:asset-pipeline:1.8.7'
+		compile 'org.grails.plugins:asset-pipeline:1.8.8'
 	}
 }
 
