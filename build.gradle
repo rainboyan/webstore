@@ -4,7 +4,7 @@ buildscript {
 	}
 
 	dependencies {
-		classpath "org.grails:grails-gradle-plugin:2.0.1"
+		classpath "org.grails:grails-gradle-plugin:2.1.0"
 	}
 }
 
@@ -17,9 +17,9 @@ configure(subprojects - project(':core')) { subproject ->
 	apply plugin: 'grails'
 
 	grails {
-		grailsVersion = '2.4.0'
-		groovyVersion = '2.3.2'
-		springLoadedVersion = '1.1.4'
+		grailsVersion = '2.4.1'
+		groovyVersion = '2.3.3'
+		springLoadedVersion = '1.2.0.RELEASE'
 	}
 
 	repositories {
@@ -31,7 +31,7 @@ configure(subprojects - project(':core')) { subproject ->
 	dependencies {
 		compile('javax.servlet:javax.servlet-api:3.0.1')
 		test("junit:junit:4.11")
-		test("com.h2database:h2:1.3.173")
+		test("com.h2database:h2:1.3.176")
 		test("org.spockframework:spock-grails-support:0.7-groovy-2.0")
 	}
 }
@@ -86,8 +86,8 @@ project("webstore") {
 		compile(project(":order"))
 		compile(project(":product"))
 		compile(project(":warehouse"))
-		bootstrap "org.grails.plugins:tomcat:7.0.53"
-		compile 'org.grails.plugins:asset-pipeline:1.8.8'
+		bootstrap "org.grails.plugins:tomcat:7.0.54"
+		compile 'org.grails.plugins:asset-pipeline:1.8.11'
 	}
 }
 
@@ -103,6 +103,6 @@ project("core") {
 	}
 
 	dependencies {
-	    compile 'org.codehaus.groovy:groovy-all:2.3.2'
+	    compile 'org.codehaus.groovy:groovy-all:2.3.3'
 	}
 }
