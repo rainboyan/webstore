@@ -4,7 +4,7 @@ buildscript {
 	}
 
 	dependencies {
-		classpath "org.grails:grails-gradle-plugin:2.1.1"
+		classpath "org.grails:grails-gradle-plugin:2.1.2"
 	}
 }
 
@@ -87,7 +87,7 @@ project("webstore") {
 		compile(project(":product"))
 		compile(project(":warehouse"))
 		bootstrap "org.grails.plugins:tomcat:7.0.55"
-		compile 'org.grails.plugins:asset-pipeline:1.9.9'
+		compile 'org.grails.plugins:asset-pipeline:2.0.19'
 	}
 }
 
