@@ -1,12 +1,14 @@
-rootProject.name = "Webstore Application"
+rootProject.name = "webstore.ROOT"
 
-include "account"
-include "core"
-include "logistic"
-include "order"
-include "product"
-include "warehouse"
-include "webstore"
+include (
+        'account',
+        'core',
+        'logistic',
+        'order',
+        'product',
+        'warehouse',
+        'webstore'
+)
 
 // Exposes gradle buildSrc for IDE support
 //include "buildSrc"

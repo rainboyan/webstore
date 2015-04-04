@@ -1,6 +1,68 @@
 
-configure(subprojects - project(':core')) { subproject ->
+buildscript {
+    ext {
+        grailsVersion = project.grailsVersion
+	    gradleWrapperVersion = project.gradleWrapperVersion
+    }
+    repositories {
+        mavenLocal()
+        maven { url "https://repo.grails.org/grails/core" }
+    }
+    dependencies {
+        classpath "org.grails:grails-gradle-plugin:$grailsVersion"
+        classpath 'com.bertramlabs.plugins:asset-pipeline-gradle:2.1.1'
+    }
+}
+
+allprojects { project ->
 	apply plugin: 'java'
+
+	repositories {
+	    mavenLocal()
+	    mavenCentral()
+	    maven { url "https://repo.grails.org/grails/core" }
+	}
+
+}
+
+subprojects { project ->
+
+    ext.pomInfo = {
+        delegate.name 'LinkQ'
+        delegate.description 'LinkQ Web Application'
+        delegate.url 'http://linkq.net/'
+
+        delegate.licenses {
+            delegate.license {
+                delegate.name 'The Apache Software License, Version 2.0'
+                delegate.url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                delegate.distribution 'repo'
+            }
+        }
+
+        delegate.developers {
+            delegate.developer {
+                delegate.id 'rain'
+                delegate.name 'Michael Yan'
+            }
+        }
+
+    }
+
+	apply plugin: 'eclipse'
+	apply plugin: 'idea'
+
+	sourceCompatibility = 1.7
+	targetCompatibility = 1.7
+
+    jar{
+        manifest.mainAttributes(
+            "Built-By": System.properties['user.name'],
+            "Created-By": System.properties['java.vm.version'] + " (" + System.properties['java.vm.vendor'] + ")",
+            "Implementation-Title": "Grails",
+            "Implementation-Version": grailsVersion,
+            "Implementation-Vendor": 'grails.org')
+    }
 }
 
 project("account") {
