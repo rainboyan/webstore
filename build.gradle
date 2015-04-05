@@ -67,6 +67,24 @@ subprojects { project ->
     }
 
 	if(project.name == 'core') return
+	if(project.name == 'webstore') {
+
+		apply plugin: "spring-boot"
+		apply plugin: "war"
+		apply plugin: "asset-pipeline"
+		apply plugin: "org.grails.grails-web"
+		apply plugin: "org.grails.grails-gsp"
+
+		assets {
+		    minifyJs = true
+		    minifyCss = true
+		}
+	} else {
+
+		apply plugin: 'maven-publish'
+		apply plugin: "org.grails.grails-plugin"
+
+	}
 }
 
 project("account") {
