@@ -1,8 +1,8 @@
-package order
+package webstore.warehouse
 
 import grails.plugins.*
 
-class OrderGrailsPlugin extends Plugin {
+class WarehouseGrailsPlugin extends Plugin {
 
     // the version or versions of Grails the plugin is designed for
     def grailsVersion = "3.0.1 > *"
@@ -12,7 +12,7 @@ class OrderGrailsPlugin extends Plugin {
     ]
 
     // TODO Fill in these fields
-    def title = "Order" // Headline display name of the plugin
+    def title = "Warehouse" // Headline display name of the plugin
     def author = "Your name"
     def authorEmail = ""
     def description = '''\
@@ -20,7 +20,7 @@ Brief summary/description of the plugin.
 '''
 
     // URL to the plugin's documentation
-    def documentation = "http://grails.org/plugin/order"
+    def documentation = "http://grails.org/plugin/warehouse"
 
     // Extra (optional) plugin metadata
 

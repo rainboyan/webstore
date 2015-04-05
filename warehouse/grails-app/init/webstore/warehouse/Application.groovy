@@ -1,4 +1,4 @@
-package order
+package webstore.warehouse
 
 import grails.boot.GrailsApp
 import grails.boot.config.GrailsAutoConfiguration

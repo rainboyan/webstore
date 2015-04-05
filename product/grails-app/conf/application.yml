@@ -1,7 +1,7 @@
 grails:
     profile: plugin
     codegen:
-        defaultPackage: product
+        defaultPackage: webstore.product
 info:
     app:
         name: '@info.app.name@'

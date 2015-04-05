@@ -1,8 +1,8 @@
-package logistic
+package webstore.order
 
 import grails.plugins.*
 
-class LogisticGrailsPlugin extends Plugin {
+class OrderGrailsPlugin extends Plugin {
 
     // the version or versions of Grails the plugin is designed for
     def grailsVersion = "3.0.1 > *"
@@ -12,7 +12,7 @@ class LogisticGrailsPlugin extends Plugin {
     ]
 
     // TODO Fill in these fields
-    def title = "Logistic" // Headline display name of the plugin
+    def title = "Order" // Headline display name of the plugin
     def author = "Your name"
     def authorEmail = ""
     def description = '''\
@@ -20,7 +20,7 @@ Brief summary/description of the plugin.
 '''
 
     // URL to the plugin's documentation
-    def documentation = "http://grails.org/plugin/logistic"
+    def documentation = "http://grails.org/plugin/order"
 
     // Extra (optional) plugin metadata
 

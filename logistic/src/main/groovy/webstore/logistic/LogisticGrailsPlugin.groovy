@@ -1,8 +1,8 @@
-package product
+package webstore.logistic
 
 import grails.plugins.*
 
-class ProductGrailsPlugin extends Plugin {
+class LogisticGrailsPlugin extends Plugin {
 
     // the version or versions of Grails the plugin is designed for
     def grailsVersion = "3.0.1 > *"
@@ -12,7 +12,7 @@ class ProductGrailsPlugin extends Plugin {
     ]
 
     // TODO Fill in these fields
-    def title = "Product" // Headline display name of the plugin
+    def title = "Logistic" // Headline display name of the plugin
     def author = "Your name"
     def authorEmail = ""
     def description = '''\
@@ -20,7 +20,7 @@ Brief summary/description of the plugin.
 '''
 
     // URL to the plugin's documentation
-    def documentation = "http://grails.org/plugin/product"
+    def documentation = "http://grails.org/plugin/logistic"
 
     // Extra (optional) plugin metadata
 

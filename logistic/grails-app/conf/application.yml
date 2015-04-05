@@ -1,7 +1,7 @@
 grails:
     profile: plugin
     codegen:
-        defaultPackage: logistic
+        defaultPackage: webstore.logistic
 info:
     app:
         name: '@info.app.name@'

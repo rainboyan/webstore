@@ -1,4 +1,4 @@
-package logistic
+package webstore.product
 
 import grails.boot.GrailsApp
 import grails.boot.config.GrailsAutoConfiguration

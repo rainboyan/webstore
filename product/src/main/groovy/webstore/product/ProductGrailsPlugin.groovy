@@ -1,8 +1,8 @@
-package account
+package webstore.product
 
 import grails.plugins.*
 
-class AccountGrailsPlugin extends Plugin {
+class ProductGrailsPlugin extends Plugin {
 
     // the version or versions of Grails the plugin is designed for
     def grailsVersion = "3.0.1 > *"
@@ -12,7 +12,7 @@ class AccountGrailsPlugin extends Plugin {
     ]
 
     // TODO Fill in these fields
-    def title = "Account" // Headline display name of the plugin
+    def title = "Product" // Headline display name of the plugin
     def author = "Your name"
     def authorEmail = ""
     def description = '''\
@@ -20,7 +20,7 @@ Brief summary/description of the plugin.
 '''
 
     // URL to the plugin's documentation
-    def documentation = "http://grails.org/plugin/account"
+    def documentation = "http://grails.org/plugin/product"
 
     // Extra (optional) plugin metadata
 

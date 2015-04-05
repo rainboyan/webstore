@@ -1,4 +1,4 @@
-package account
+package webstore.order
 
 import grails.boot.GrailsApp
 import grails.boot.config.GrailsAutoConfiguration
