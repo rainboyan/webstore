@@ -1,8 +1,4 @@
 
-plugins {
-    id "io.spring.dependency-management" version "0.4.0.RELEASE"
-}
-
 apply plugin: "spring-boot"
 apply plugin: "war"
 apply plugin: "asset-pipeline"
@@ -43,8 +39,4 @@ dependencies {
     testRuntime 'org.seleniumhq.selenium:selenium-htmlunit-driver:2.44.0'
 
     console "org.grails:grails-console"
-}
-
-task wrapper(type: Wrapper) {
-    gradleVersion = gradleWrapperVersion
 }

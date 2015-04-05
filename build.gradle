@@ -9,6 +9,7 @@ buildscript {
         maven { url "https://repo.grails.org/grails/core" }
     }
     dependencies {
+    	classpath "io.spring.gradle:dependency-management-plugin:0.4.0.RELEASE"
         classpath "org.grails:grails-gradle-plugin:$grailsVersion"
         classpath 'com.bertramlabs.plugins:asset-pipeline-gradle:2.1.1'
     }
@@ -16,6 +17,7 @@ buildscript {
 
 allprojects { project ->
 	apply plugin: 'java'
+	apply plugin: "io.spring.dependency-management"
 
 	repositories {
 	    mavenLocal()
@@ -63,6 +65,8 @@ subprojects { project ->
             "Implementation-Version": grailsVersion,
             "Implementation-Vendor": 'grails.org')
     }
+
+	if(project.name == 'core') return
 }
 
 project("account") {
