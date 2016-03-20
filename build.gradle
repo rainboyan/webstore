@@ -2,17 +2,21 @@
 buildscript {
     ext {
         grailsVersion = project.grailsVersion
-	    gradleWrapperVersion = project.gradleWrapperVersion
+	      gradleWrapperVersion = project.gradleWrapperVersion
     }
     repositories {
         mavenLocal()
         maven { url "https://repo.grails.org/grails/core" }
     }
     dependencies {
-    	classpath "io.spring.gradle:dependency-management-plugin:0.4.0.RELEASE"
+    	  classpath "io.spring.gradle:dependency-management-plugin:0.5.3.RELEASE"
         classpath "org.grails:grails-gradle-plugin:$grailsVersion"
-        classpath 'com.bertramlabs.plugins:asset-pipeline-gradle:2.1.1'
+        classpath 'com.bertramlabs.plugins:asset-pipeline-gradle:2.5.0'
     }
+}
+
+ext {
+    webstoreVersion = '1.0-SNAPSHOT'
 }
 
 allprojects { project ->
@@ -28,11 +32,12 @@ allprojects { project ->
 }
 
 subprojects { project ->
-
+    version = webstoreVersion
+    group = "webstore"
     ext.pomInfo = {
-        delegate.name 'LinkQ'
-        delegate.description 'LinkQ Web Application'
-        delegate.url 'http://linkq.net/'
+        delegate.name 'Webstore'
+        delegate.description 'Webstore Application'
+        delegate.url 'http://web.store/'
 
         delegate.licenses {
             delegate.license {
@@ -51,11 +56,11 @@ subprojects { project ->
 
     }
 
-	apply plugin: 'eclipse'
-	apply plugin: 'idea'
+  	apply plugin: 'eclipse'
+	  apply plugin: 'idea'
 
-	sourceCompatibility = 1.7
-	targetCompatibility = 1.7
+	  sourceCompatibility = 1.8
+	  targetCompatibility = 1.8
 
     jar{
         manifest.mainAttributes(
@@ -66,24 +71,21 @@ subprojects { project ->
             "Implementation-Vendor": 'grails.org')
     }
 
-	if(project.name == 'core') return
-	if(project.name == 'webstore') {
+}
 
-		apply plugin: "spring-boot"
-		apply plugin: "war"
-		apply plugin: "asset-pipeline"
-		apply plugin: "org.grails.grails-web"
-		apply plugin: "org.grails.grails-gsp"
+project("core") {
+	description = "Core"
 
-		assets {
-		    minifyJs = true
-		    minifyCss = true
-		}
-	} else {
+	apply plugin: 'maven'
+	apply plugin: 'groovy'
 
-		apply plugin: 'maven-publish'
-		apply plugin: "org.grails.grails-plugin"
+	repositories {
+		mavenLocal()
+		mavenCentral()
+	}
 
+	dependencies {
+	    compile 'org.codehaus.groovy:groovy:2.4.6'
 	}
 }
 
@@ -138,20 +140,5 @@ project("webstore") {
 		compile(project(":product"))
 		compile(project(":warehouse"))
 	}
-}
 
-project("core") {
-	description = "Core"
-
-	apply plugin: 'maven'
-	apply plugin: 'groovy'
-
-	repositories {
-		mavenLocal()
-		mavenCentral()
-	}
-
-	dependencies {
-	    compile 'org.codehaus.groovy:groovy:2.4.3'
-	}
 }

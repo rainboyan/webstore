@@ -2,7 +2,7 @@ package webstore.account
 
 class AccountController {
 
-    def index() { 
+    def index() {
         render "Account index()"
     }
 }
