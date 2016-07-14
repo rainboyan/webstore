@@ -11,7 +11,7 @@ buildscript {
     dependencies {
     	classpath "io.spring.gradle:dependency-management-plugin:0.5.6.RELEASE"
         classpath "org.grails:grails-gradle-plugin:$grailsVersion"
-        classpath 'com.bertramlabs.plugins:asset-pipeline-gradle:2.8.2'
+        classpath 'com.bertramlabs.plugins:asset-pipeline-gradle:2.9.4'
     }
 }
 
@@ -20,14 +20,14 @@ ext {
 }
 
 allprojects { project ->
-	  apply plugin: 'java'
-	  apply plugin: "io.spring.dependency-management"
+	apply plugin: 'java'
+	apply plugin: "io.spring.dependency-management"
 
-	  repositories {
-	      mavenLocal()
-	      mavenCentral()
-	      maven { url "https://repo.grails.org/grails/core" }
-	  }
+	repositories {
+	    mavenLocal()
+	    mavenCentral()
+	    maven { url "https://repo.grails.org/grails/core" }
+	}
 
 }
 
@@ -57,10 +57,10 @@ subprojects { project ->
     }
 
   	apply plugin: 'eclipse'
-	  apply plugin: 'idea'
+	apply plugin: 'idea'
 
-	  sourceCompatibility = 1.8
-	  targetCompatibility = 1.8
+	sourceCompatibility = 1.8
+	targetCompatibility = 1.8
 
     jar{
         manifest.mainAttributes(
@@ -74,70 +74,70 @@ subprojects { project ->
 }
 
 project("core") {
-	  description = "Core"
+	description = "Core"
 
-	  apply plugin: 'maven'
-	  apply plugin: 'groovy'
+	apply plugin: 'maven'
+	apply plugin: 'groovy'
 
-	  repositories {
-		    mavenLocal()
-		    mavenCentral()
-	  }
+	repositories {
+	    mavenLocal()
+	    mavenCentral()
+	}
 
-	  dependencies {
-	      compile 'org.codehaus.groovy:groovy:2.4.7'
-	  }
+	dependencies {
+	    compile 'org.codehaus.groovy:groovy:2.4.7'
+	}
 }
 
 project("account") {
-	  description = "Account"
+	description = "Account"
 
-	  dependencies {
-		    compile(project(":core"))
-	  }
+	dependencies {
+	    compile(project(":core"))
+	}
 }
 
 project("logistic") {
-	  description = "Logistic"
+	description = "Logistic"
 
-	  dependencies {
-		    compile(project(":core"))
-	  }
+	dependencies {
+	    compile(project(":core"))
+	}
 }
 
 project("order") {
-	  description = "Order"
+	description = "Order"
 
-	  dependencies {
-		    compile(project(":core"))
-	  }
+	dependencies {
+	    compile(project(":core"))
+	}
 }
 
 project("product") {
-	  description = "Product"
+	description = "Product"
 
-	  dependencies {
-		    compile(project(":core"))
-	  }
+	dependencies {
+	    compile(project(":core"))
+	}
 }
 
 project("warehouse") {
   	description = "Warehouse"
 
-	  dependencies {
-		    compile(project(":core"))
-	  }
+	dependencies {
+	    compile(project(":core"))
+	}
 }
 
 project("webstore") {
-	  description = "Webstore"
+	description = "webstore"
 
-	  dependencies {
-		    compile(project(":account"))
-		    compile(project(":core"))
-		    compile(project(":logistic"))
-		    compile(project(":order"))
-		    compile(project(":product"))
-		    compile(project(":warehouse"))
-	  }
+	dependencies {
+	    compile(project(":account"))
+	    compile(project(":core"))
+	    compile(project(":logistic"))
+	    compile(project(":order"))
+	    compile(project(":product"))
+	    compile(project(":warehouse"))
+	}
 }

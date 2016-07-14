@@ -1,4 +1,4 @@
-package Webstore
+package webstore
 
 class UrlMappings {
 
