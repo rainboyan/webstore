@@ -8,8 +8,8 @@ buildscript {
     }
     dependencies {
         classpath "org.grails:grails-gradle-plugin:$grailsVersion"
-        classpath "com.bertramlabs.plugins:asset-pipeline-gradle:2.9.4"
-        classpath "org.grails.plugins:hibernate4:5.0.10"
+        classpath "com.bertramlabs.plugins:asset-pipeline-gradle:2.11.2"
+        classpath "org.grails.plugins:hibernate4:5.0.12"
     }
 }
 

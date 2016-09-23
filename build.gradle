@@ -2,16 +2,16 @@
 buildscript {
     ext {
         grailsVersion = project.grailsVersion
-          gradleWrapperVersion = project.gradleWrapperVersion
+        gradleWrapperVersion = project.gradleWrapperVersion
     }
     repositories {
         mavenLocal()
         maven { url "https://repo.grails.org/grails/core" }
     }
     dependencies {
-        classpath "io.spring.gradle:dependency-management-plugin:0.6.0.RELEASE"
+        classpath "io.spring.gradle:dependency-management-plugin:0.6.1.RELEASE"
         classpath "org.grails:grails-gradle-plugin:$grailsVersion"
-        classpath 'com.bertramlabs.plugins:asset-pipeline-gradle:2.9.4'
+        classpath 'com.bertramlabs.plugins:asset-pipeline-gradle:2.11.2'
     }
 }
 
